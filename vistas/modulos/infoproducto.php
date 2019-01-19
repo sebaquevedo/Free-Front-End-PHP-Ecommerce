@@ -9,13 +9,13 @@ $url = Ruta::ctrRuta();
 BREADCRUMB INFOPRODUCTOS
 ======================================-->
 <div class="container-fluid well well-sm">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
-			
+
 			<ul class="breadcrumb fondoBreadcrumb text-uppercase">
-				
+
 				<li><a href="<?php echo $url;  ?>">INICIO</a></li>
 				<li class="active pagActiva"><?php echo $rutas[0] ?></li>
 
@@ -31,9 +31,9 @@ BREADCRUMB INFOPRODUCTOS
 INFOPRODUCTOS
 ======================================-->
 <div class="container-fluid infoproducto">
-	
+
 	<div class="container">
-		
+
 		<div class="row">
 
 			<?php
@@ -51,7 +51,7 @@ INFOPRODUCTOS
 				if($infoproducto["tipo"] == "fisico"){
 
 					echo '<div class="col-md-5 col-sm-6 col-xs-12 visorImg">
-						
+
 							<figure class="visor">';
 
 							if($multimedia != null){
@@ -60,12 +60,12 @@ INFOPRODUCTOS
 
 									echo '<img id="lupa'.($i+1).'" class="img-thumbnail" src="'.$servidor.$multimedia[$i]["foto"].'">';
 
-								}								
+								}
 
 								echo '</figure>
 
 								<div class="flexslider">
-								  
+
 								  <ul class="slides">';
 
 								for($i = 0; $i < count($multimedia); $i ++){
@@ -76,13 +76,13 @@ INFOPRODUCTOS
 
 								}
 
-							}	
-							    						 
+							}
+
 							  echo '</ul>
 
 							</div>
 
-						</div>';			
+						</div>';
 
 				}else{
 
@@ -91,12 +91,12 @@ INFOPRODUCTOS
 					=============================================*/
 
 					echo '<div class="col-sm-6 col-xs-12">
-							
+
 						<iframe class="videoPresentacion" src="https://www.youtube.com/embed/'.$infoproducto["multimedia"].'?rel=0&autoplay=0" width="100%" frameborder="0" allowfullscreen></iframe>
 
 					</div>';
 
-				}			
+				}
 
 			?>
 
@@ -122,11 +122,11 @@ INFOPRODUCTOS
 				======================================-->
 
 				<div class="col-xs-6">
-					
+
 					<h6>
-						
+
 						<a href="javascript:history.back()" class="text-muted">
-							
+
 							<i class="fa fa-reply"></i> Continuar Comprando
 
 						</a>
@@ -140,11 +140,11 @@ INFOPRODUCTOS
 				======================================-->
 
 				<div class="col-xs-6">
-					
+
 					<h6>
-						
+
 						<a class="dropdown-toggle pull-right text-muted" data-toggle="dropdown" href="">
-							
+
 							<i class="fa fa-plus"></i> Compartir
 
 						</a>
@@ -164,7 +164,7 @@ INFOPRODUCTOS
 									Google
 								</p>
 							</li>
-							
+
 						</ul>
 
 					</h6>
@@ -181,8 +181,8 @@ INFOPRODUCTOS
 
 					/*=============================================
 					TITULO
-					=============================================*/				
-					
+					=============================================*/
+
 					if($infoproducto["oferta"] == 0){
 
 						if($infoproducto["nuevo"] == 0){
@@ -196,7 +196,7 @@ INFOPRODUCTOS
 							<br>
 
 							<small>
-						
+
 								<span class="label label-warning">Nuevo</span>
 
 							</small>
@@ -214,11 +214,11 @@ INFOPRODUCTOS
 							<br>
 
 							<small>
-						
+
 								<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
 
 							</small>
-							
+
 							</h1>';
 
 						}else{
@@ -228,12 +228,12 @@ INFOPRODUCTOS
 							<br>
 
 							<small>
-								<span class="label label-warning">Nuevo</span> 
-								<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span> 
+								<span class="label label-warning">Nuevo</span>
+								<span class="label label-warning">'.$infoproducto["descuentoOferta"].'% off</span>
 
 
 							</small>
-							
+
 							</h1>';
 
 						}
@@ -241,7 +241,7 @@ INFOPRODUCTOS
 
 					/*=============================================
 					TITULO
-					=============================================*/	
+					=============================================*/
 
 					if($infoproducto["precio"] == 0){
 
@@ -258,13 +258,13 @@ INFOPRODUCTOS
 							echo '<h2 class="text-muted">
 
 								<span>
-								
+
 									<strong class="oferta">USD $'.$infoproducto["precio"].'</strong>
 
 								</span>
 
 								<span>
-									
+
 									$'.$infoproducto["precioOferta"].'
 
 								</span>
@@ -277,12 +277,12 @@ INFOPRODUCTOS
 
 					/*=============================================
 					DESCRIPCIÓN
-					=============================================*/		
+					=============================================*/
 
 					echo '<p>'.$infoproducto["descripcion"].'</p>';
 
 				?>
-				
+
 				<!--=====================================
 				CARACTERÍSTICAS DEL PRODUCTO
 				======================================-->
@@ -290,7 +290,7 @@ INFOPRODUCTOS
 				<hr>
 
 				<div class="form-group row">
-					
+
 				<?php
 
 					if($infoproducto["detalles"] != null){
@@ -304,7 +304,7 @@ INFOPRODUCTOS
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarTalla">
-										
+
 										<option value="">Talla</option>';
 
 										for($i = 0; $i <= count($detalles["Talla"]); $i++){
@@ -324,7 +324,7 @@ INFOPRODUCTOS
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarColor">
-										
+
 										<option value="">Color</option>';
 
 										for($i = 0; $i <= count($detalles["Color"]); $i++){
@@ -344,7 +344,7 @@ INFOPRODUCTOS
 								echo '<div class="col-md-3 col-xs-12">
 
 									<select class="form-control seleccionarDetalle" id="seleccionarMarca">
-										
+
 										<option value="">Marca</option>';
 
 										for($i = 0; $i <= count($detalles["Marca"]); $i++){
@@ -387,7 +387,7 @@ INFOPRODUCTOS
 						}
 
 					}
-
+					
 					/*=============================================
 					ENTREGA
 					=============================================*/
@@ -403,7 +403,7 @@ INFOPRODUCTOS
 								<span class="label label-default" style="font-weight:100">
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata | 
+									Entrega inmediata |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' inscritos |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -456,7 +456,7 @@ INFOPRODUCTOS
 								<small>
 
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
-									Entrega inmediata <br> 
+									Entrega inmediata <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventas"].' ventas <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
@@ -477,13 +477,13 @@ INFOPRODUCTOS
 								<hr>
 
 								<span class="label label-default" style="font-weight:100">
-								
+
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  |
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  |
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas  
+									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].'</span> personas
 
 								</span>
 
@@ -494,13 +494,13 @@ INFOPRODUCTOS
 								<hr>
 
 								<small>
-								
+
 									<i class="fa fa-clock-o" style="margin-right:5px"></i>
 									'.$infoproducto["entrega"].' días hábiles para la entrega  <br>
 									<i class="fa fa-shopping-cart" style="margin:0px 5px"></i>
 									'.$infoproducto["ventasGratis"].' solicitudes  <br>
 									<i class="fa fa-eye" style="margin:0px 5px"></i>
-									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas 
+									Visto por <span class="vistas" tipo="'.$infoproducto["precio"].'">'.$infoproducto["vistasGratis"].' </span> personas
 
 								</small>
 
@@ -544,7 +544,7 @@ INFOPRODUCTOS
 
 						}
 
-					}				
+					}
 
 				?>
 
@@ -563,7 +563,7 @@ INFOPRODUCTOS
 						echo '<div class="col-md-6 col-xs-12">';
 
 							if($infoproducto["tipo"]=="virtual"){
-						
+
 								echo '<button class="btn btn-default btn-block btn-lg backColor">ACCEDER AHORA</button>';
 
 							}else{
@@ -579,17 +579,17 @@ INFOPRODUCTOS
 						if($infoproducto["tipo"]=="virtual"){
 
 							echo '<div class="col-md-6 col-xs-12">
-							
+
 									<button class="btn btn-default btn-block btn-lg">
 									<small>COMPRAR AHORA</small></button>
 
 								</div>
 
 								<div class="col-md-6 col-xs-12">
-									
+
 									<button class="btn btn-default btn-block btn-lg backColor">
 
-									<small>ADICIONAR AL CARRITO</small> 
+									<small>ADICIONAR AL CARRITO</small>
 
 									<i class="fa fa-shopping-cart col-md-0"></i>
 
@@ -599,10 +599,10 @@ INFOPRODUCTOS
 						}else{
 
 							echo '<div class="col-lg-6 col-md-8 col-xs-12">
-									
+
 									<button class="btn btn-default btn-block btn-lg backColor">
 
-									ADICIONAR AL CARRITO 
+									ADICIONAR AL CARRITO
 
 									<i class="fa fa-shopping-cart"></i>
 
@@ -617,19 +617,19 @@ INFOPRODUCTOS
 				?>
 
 				</div>
-				
+
 				<!--=====================================
 				ZONA DE LUPA
 				======================================-->
 
 				<figure class="lupa">
-					
+
 					<img src="">
 
 				</figure>
 
 			</div>
-			
+
 		</div>
 
 		<!--=====================================
@@ -649,7 +649,7 @@ INFOPRODUCTOS
 			$cantidad = 0;
 
 			foreach ($comentarios as $key => $value){
-				
+
 				if($value["comentario"] != ""){
 
 					$cantidad += count($value["id"]);
@@ -658,7 +658,7 @@ INFOPRODUCTOS
 			}
 
 			?>
-			
+
 			<ul class="nav nav-tabs">
 
 			<?php
@@ -679,7 +679,7 @@ INFOPRODUCTOS
 				    $sumaCalificacion = 0;
 
 					foreach ($comentarios as $key => $value) {
-						
+
 						if($value["calificacion"] != 0){
 
 							$cantidadCalificacion += count($value["id"]);
@@ -796,7 +796,7 @@ INFOPRODUCTOS
 
 			?>
 
-					
+
 				</a></li>
 
 			</ul>
@@ -810,7 +810,7 @@ INFOPRODUCTOS
 		<?php
 
 		foreach ($comentarios as $key => $value) {
-			
+
 			if($value["comentario"] != ""){
 
 				$item = "id";
@@ -819,9 +819,9 @@ INFOPRODUCTOS
 				$usuario = ControladorUsuarios::ctrMostrarUsuario($item, $valor);
 
 				echo '<div class="panel-group col-md-3 col-sm-6 col-xs-12 alturaComentarios">
-				
+
 					<div class="panel panel-default">
-				      
+
 				      <div class="panel-heading text-uppercase">
 
 				      	'.$usuario["nombre"].'
@@ -831,28 +831,28 @@ INFOPRODUCTOS
 
 				      		if($usuario["foto"] == ""){
 
-				      			echo '<img class="img-circle pull-right" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="20%">';	
+				      			echo '<img class="img-circle pull-right" src="'.$servidor.'vistas/img/usuarios/default/anonymous.png" width="20%">';
 
 				      		}else{
 
-				      			echo '<img class="img-circle pull-right" src="'.$url.$usuario["foto"].'" width="20%">';	
+				      			echo '<img class="img-circle pull-right" src="'.$url.$usuario["foto"].'" width="20%">';
 
 				      		}
-				      	
+
 				      	}else{
 
-				      		echo '<img class="img-circle pull-right" src="'.$usuario["foto"].'" width="20%">';	
+				      		echo '<img class="img-circle pull-right" src="'.$usuario["foto"].'" width="20%">';
 
 				      	}
 
 				      	echo '</span>
 
 				      </div>
-				     
+
 				      <div class="panel-body"><small>'.$value["comentario"].'</small></div>
 
 				      <div class="panel-footer">';
-				      	
+
 				      	switch($value["calificacion"]){
 
 							case 0.5:
@@ -938,7 +938,7 @@ INFOPRODUCTOS
 						}
 
 				      echo '</div>
-				    
+
 				    </div>
 
 				</div>';
@@ -960,7 +960,7 @@ INFOPRODUCTOS
 ARTÏCULOS RELACIONADOS
 ======================================-->
 <div class="container-fluid productos">
-	
+
 	<div class="container">
 
 		<div class="row">
@@ -968,7 +968,7 @@ ARTÏCULOS RELACIONADOS
 			<div class="col-xs-12 tituloDestacado">
 
 				<div class="col-sm-6 col-xs-12">
-			
+
 					<h1><small>PRODUCTOS RELACIONADOS</small></h1>
 
 				</div>
@@ -983,9 +983,9 @@ ARTÏCULOS RELACIONADOS
 					$rutaArticulosDestacados = ControladorProductos::ctrMostrarSubcategorias($item, $valor);
 
 					echo '<a href="'.$url.$rutaArticulosDestacados[0]["ruta"].'">
-						
+
 						<button class="btn btn-default backColor pull-right">
-							
+
 							VER MÁS <span class="fa fa-chevron-right"></span>
 
 						</button>
@@ -1030,13 +1030,13 @@ ARTÏCULOS RELACIONADOS
 				echo '<ul class="grid0">';
 
 				foreach ($relacionados as $key => $value) {
-				
+
 				echo '<li class="col-md-3 col-sm-6 col-xs-12">
 
 						<figure>
-							
+
 							<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-								
+
 								<img src="'.$servidor.$value["portada"].'" class="img-responsive">
 
 							</a>
@@ -1044,11 +1044,11 @@ ARTÏCULOS RELACIONADOS
 						</figure>
 
 						<h4>
-				
+
 							<small>
-								
+
 								<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-									
+
 									'.$value["titulo"].'<br>
 
 									<span style="color:rgba(0,0,0,0)">-</span>';
@@ -1065,9 +1065,9 @@ ARTÏCULOS RELACIONADOS
 
 									}
 
-								echo '</a>	
+								echo '</a>
 
-							</small>			
+							</small>
 
 						</h4>
 
@@ -1084,13 +1084,13 @@ ARTÏCULOS RELACIONADOS
 								echo '<h2>
 
 										<small>
-					
+
 											<strong class="oferta">USD $'.$value["precio"].'</strong>
 
 										</small>
 
 										<small>$'.$value["precioOferta"].'</small>
-									
+
 									</h2>';
 
 							}else{
@@ -1098,17 +1098,17 @@ ARTÏCULOS RELACIONADOS
 								echo '<h2><small>USD $'.$value["precio"].'</small></h2>';
 
 							}
-							
+
 						}
-										
+
 						echo '</div>
 
 						<div class="col-xs-6 enlaces">
-							
+
 							<div class="btn-group pull-right">
-								
+
 								<button type="button" class="btn btn-default btn-xs deseos" idProducto="'.$value["id"].'" data-toggle="tooltip" title="Agregar a mi lista de deseos">
-									
+
 									<i class="fa fa-heart" aria-hidden="true"></i>
 
 								</button>';
@@ -1136,13 +1136,13 @@ ARTÏCULOS RELACIONADOS
 								}
 
 								echo '<a href="'.$url.$value["ruta"].'" class="pixelProducto">
-								
+
 									<button type="button" class="btn btn-default btn-xs" data-toggle="tooltip" title="Ver producto">
-										
+
 										<i class="fa fa-eye" aria-hidden="true"></i>
 
-									</button>	
-								
+									</button>
+
 								</a>
 
 							</div>
